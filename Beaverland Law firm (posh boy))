@@ -1,0 +1,72 @@
+name = input("We welcome you as the new head of the Beaver Union Dams Supporters or B.U.D.S! What is your name? ")
+chips = 1000
+
+print("It's your first day and you already have a task! A beaver dam has been broken at a farmland by a crazy farmer. Your goal is to make that farmer pay!")
+print("What are your actions? Be harsh or be sophisticated?")
+choice1 = input()
+if choice1 == "harsh":
+    print("Ok! We will sue the man for his life's worth and exsile him to space!")
+    chips -= 25
+elif choice1 == "sophisticated":
+    print("We have made him rebuild that dam and sent him free beaver merch to make him a beaver fan!")
+    chips -= 30
+else:
+    print("INVALID! REDO OR FACE BEING FIRED!")
+    choice = input()
+print("You still lost some chips, aka money on  this case, but it was funny! You have", chips, "chips")
+
+print("****Day 1 over****")
+
+dams = 8
+print("It's day two and we have an issue! We are being sued because of a beaver attack... which is a false accusation for money! But more importantly we now have the dam statistics: we have 8...")
+print("Anyway let me explain how these law suits work",name,". The person suing you will present some points of evidence and you have to find a mistake in their lies to win, by picking the false evidence!")
+
+print("ROUND 1 of COURT TRIAL 1 - BEGIN:"
+      "We are being sued my a beaver hating, wood cutting candadian man! He claims that he was jumped by a group of beavers.")
+
+print("I'll ask the questions for you, master", name, "so don't sweat anything!")
+
+print("\nQ1. When were you attacked? \n Him: Yesterday"
+      "\nQ2. What attacked you? \n Him: Some Eurasian Beavers"
+      "\nQ3. Why did they attack? \n Him: I don't know! I can't read minds!")
+print("So do you see a mistake in the evidence?")
+counterarg1 = input("Is it Q1, Q2 or Q3? ")
+while counterarg1:
+    if counterarg1 == "Q1":
+        print("No he did report the attack yesterday...")
+        chips -= 5
+        counterarg1 = input( )
+    elif counterarg1 == "Q2":
+        print("Yeah your right! How could Eurasian beavers attack him if there aren't even a group of them! They are all in conservation!")
+        chips += 45
+        print("You wiiiiiin!")
+        break
+    elif counterarg1 == "Q3":
+        print("No his power level is too low to read minds!")
+        chips -= 5
+        counterarg1 = input()
+    else:
+        print("Are you stupid? Don't mess around in court! think again!")
+        chips -= 10
+        counterarg1 = input()
+
+print(chips)
+print("****DAY 2 OVER******")
+
+print("Day 3 has started and you have the oppertunity to build a dam! Yes or No? it will cost you chips")
+damproposal1 = input("So yes or no? ")
+if damproposal1 == "yes"or"Yes":
+    print("A new dam has been built!")
+    chips -= 15
+    dams += 1
+elif damproposal1 == "no"or"No":
+    print("Oh well!")
+else:
+    print("haha funny... you have lost a dam proposal now >:[")
+
+print("You have", chips, "chips")
+
+print("*******Day 3 over***********")
+
+
+
