@@ -1,0 +1,39 @@
+Employees = 5
+Builders = 3
+Builders_free = 3
+Client_managers = 1
+Lawyers = 1
+Engineers = 0
+Architects = 0
+Clients = 0
+Pounds = 1000
+turn = 1
+print ("You CEO of beaver & dam ltd, and your goal is to earn as as much money as possible for your company. Right now you have 5 employees and 1000 pounds")
+while turn < 100:
+    choice  = input("What do you want to do, Proceed to next turn (1), View you money and employees (2) or hire beavers (3)")
+    if choice == "1":
+        if turn == 1:
+            input1 = input("Client manager: We have a client! they want a 5x2x1 metre dam over ther river nipple\nThis will cost 10 pounds. They will pay us £20 and a builder will be busy for 3 turns 1 = yes 2 = no")
+            if input1 == "1":
+                if Builders_free > 0:
+                    Pounds += 10
+                    Builders_free -= 1
+                    print("successful")
+                else:
+                    print("failed: not enough Builders free")
+                turn1dealmade = True
+            if input1 == "2":
+                print("nothing happened")
+
+        turn += 1
+        print(" ")
+        print("*******Turn 2********")
+        wages = Client_managers*2 + Lawyers*2 + Builders
+        Pounds -= wages
+        print(f"You lost £{wages} from wages, you now have £{Pounds}")
+    if choice == "2":
+        print(f"you have £{Pounds} and you have {Builders} Builders, {Builders_free} Builders free, {Client_managers} Client managers,\n{Lawyers} Lawyers, {Engineers} Engineers and {Architects} Architects")
+    if choice == "3":
+        fireorhire = int(input("Would you like to fire or hire? Fire = 1 Hire = 2"))
+        if fireorhire == 1:
+            
