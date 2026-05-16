@@ -1,39 +1,93 @@
+import random
 Employees = 5
 Builders = 3
-Builders_free = 3
 Client_managers = 1
 Lawyers = 1
 Engineers = 0
 Architects = 0
 Clients = 0
-Pounds = 1000
+money = 1000
 turn = 1
-print ("You CEO of beaver & dam ltd, and your goal is to earn as as much money as possible for your company. Right now you have 5 employees and 1000 pounds")
+def nothing_happens():
+    print("Nothing happened :(")
+def wallet():
+    print("Your wallet was stolen! You lose £100")
+    money -= 100
+def jack_the_ripper():
+    ripper = int(inp)
+
+
+
+print ("You CEO of beaver & dam ltd, and your goal is to earn as as much money as possible for your company. Right now you have 5 employees and 1000 money")
 while turn < 100:
     choice  = input("What do you want to do, Proceed to next turn (1), View you money and employees (2) or hire beavers (3)")
     if choice == "1":
         if turn == 1:
-            input1 = input("Client manager: We have a client! they want a 5x2x1 metre dam over ther river nipple\nThis will cost 10 pounds. They will pay us £20 and a builder will be busy for 3 turns 1 = yes 2 = no")
+            input1 = input("We have a client! they want a 5x2x1 metre dam over ther river nipple\nThis will cost 10 money. They will pay us £20 1 = yes 2 = no")
             if input1 == "1":
-                if Builders_free > 0:
-                    Pounds += 10
-                    Builders_free -= 1
-                    print("successful")
-                else:
-                    print("failed: not enough Builders free")
-                turn1dealmade = True
+                money += 10
+                print("successful")
             if input1 == "2":
                 print("nothing happened")
-
+        elif turn == 2:
+            if money < 0:
+                print("you are in debt! you lose!")
+                quit()
+            for i in range(Client_managers):
+                #random stuff
         turn += 1
-        print(" ")
-        print("*******Turn 2********")
-        wages = Client_managers*2 + Lawyers*2 + Builders
-        Pounds -= wages
-        print(f"You lost £{wages} from wages, you now have £{Pounds}")
+            print(" ")
+            print(f"*******Turn {turn}********")
+            wages = Client_managers*2 + Lawyers*2 + Builders + Engineers*5 + Architects*10
+            money -= wages
+            print(f"You lost £{wages} from wages, you now have £{money}")
     if choice == "2":
-        print(f"you have £{Pounds} and you have {Builders} Builders, {Builders_free} Builders free, {Client_managers} Client managers,\n{Lawyers} Lawyers, {Engineers} Engineers and {Architects} Architects")
+        print(f"you have £{money} and you have {Builders} Builders, {Client_managers} Client managers,\n{Lawyers} Lawyers, {Engineers} Engineers and {Architects} Architects")
     if choice == "3":
-        fireorhire = int(input("Would you like to fire or hire? Fire = 1 Hire = 2"))
+        fireorhire = int(input("Would you like to fire or hire? Fire = 1 Hire = 2 "))
         if fireorhire == 1:
-            
+            fireperson = input("who do u want to fire ")
+            if fireperson == "Builder":
+                if Builders!= 0:
+                    Builders-=1
+                    Employees-=1
+            if fireperson == "Client_manager":
+                if Client_managers != 0:
+                    Client_managers-=1
+                    Employees-=1
+            if fireperson == "Lawyer":
+                if Lawyers != 0:
+                    Lawyers-=1
+                    Employees-=1
+            if fireperson == "Engineer":
+                if Engineers != 0:
+                    Engineers-=1
+                    Employees-=1
+            if fireperson == "Architect":
+                if Architects != 0:
+                    Architects-=1
+                    Employees-=1
+        elif fireorhire == 2:
+            fireperson = input("who do u want to Hire (press 1 to see prices)")
+            if fireperson == "Builder":
+                Builders+=1
+                Employees+=1
+                money-=100
+            if fireperson == "Client_manager":
+                Client_managers+=1
+                Employees+=1
+                money-=200
+            if fireperson == "Lawyer":
+                Lawyers+=1
+                Employees+=1
+                money-=200
+            if fireperson == "Engineer":
+                Engineers+=1
+                Employees+=1
+                money-=500
+            if fireperson == "Architect":
+                Architects+=1
+                Employees+=1
+                money-=1000
+            elif fireperson == "1":
+                print("builders - 100, Client managers - 200, Lawyers - 200, Engineers - 500, Architects - 1000")
